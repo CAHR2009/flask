@@ -1,14 +1,13 @@
 from flask import Flask, url_for
-
 application = Flask(__name__)
 
 
 
-@application.route("/choice/<planet_name>")
-def simple(planet_name):
+@application.route("/results/<nickname>/<int:level>/<float:rating>")
+def simple(nickname, level, rating):
     return f'''
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,22 +16,17 @@ def simple(planet_name):
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
     crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style.css">
-    <title>Варианты выбора</title>
+    <title>Результаты</title>
   </head>
   <body>
-    <h1>Мое предложение: {planet_name}</h1>
-    <h3>Эта планета ближе к Земле</h3>
+    <h1>Результаты отбора</h1>
+    <h3>Претендента на участие в миссии {nickname}</h3>
     <div class="alert alert-success" role="alert">
-        <h3>На ней много необходимых ресурсов</h3>
+        <h3>Поздравляем! ваш рейтинг после {level} этапа отбора</h3>
     </div>
-    <div class="alert alert-secondary" role="alert">
-        <h3>На ней есть вода и атмосфера</h3>
-    </div>
+    <h3>Составляет {rating}!</h3>
     <div class="alert alert-warning" role="alert">
-        <h3>На ней есть небольшое магнитное поле</h3>
-    </div>
-    <div class="alert alert-danger" role="alert">
-        <h3>Наконец, она просто красива!</h3>
+        <h3>Желаем удачи!</h3>
     </div>
   </body>
 </html>
