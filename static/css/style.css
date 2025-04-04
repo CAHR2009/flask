@@ -1,15 +1,4 @@
-h1{
-    text-align: center;
-}
-h3{
-    text-align: center;
-}
-.form{
-    padding: 0 30px;
-    font-size: 20px;
-    background-color: #f2e8c9;
-    margin-left: 700px;
-    margin-right: 700px;
-    border: 20px solid #f2e8c9;
-    border-radius: 20px;
+
+body{
+    background: #999999
 }
